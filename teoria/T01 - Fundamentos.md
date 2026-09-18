@@ -235,13 +235,13 @@ Un posible estado de esta base de datos podría ser el siguiente:
 
 Los Sistemas de Gestión de Bases de Datos (SGBD) definen su arquitectura mediante **tres niveles de esquemas**, cada uno con un propósito específico:
 
-3. Esquemas **Externos** (Nivel de Vistas)
+1. Esquemas **Externos** (Nivel de Vistas)
 	- **Función**: Define las diferentes vistas personalizadas para distintos grupos de usuarios
 	- **Características**: Cada vista muestra únicamente la porción de datos relevante para un usuario o aplicación específica
 	- **Modelo utilizado**: El mismo modelo de datos empleado en el esquema conceptual
 	- **Orientado a**: Usuarios finales y aplicaciones
 
-3. Esquema **Conceptual** (Nivel Lógico)
+2. Esquema **Conceptual** (Nivel Lógico)
 	- **Función**: Representa la estructura completa de la base de datos y sus restricciones de integridad
 	- **Características**: Proporciona una visión unificada e independiente del almacenamiento físico para toda la comunidad de usuarios
 	- **Modelo utilizado**: Modelo de datos conceptual (como el modelo entidad-relación) o modelo de implementación (como el modelo relacional)
