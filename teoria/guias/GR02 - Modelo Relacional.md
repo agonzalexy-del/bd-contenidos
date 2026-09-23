@@ -21,14 +21,14 @@ Ten en cuenta desde el principio que existen **dos modelos**:
 
 Una **relación** se parece a una **tabla**: filas con datos y columnas con encabezados. Pero cada concepto informal tiene su nombre formal:
 
-| Informal (tabla)     | Formal (modelo relacional) |
-| -------------------- | -------------------------- |
-| Tabla                | **Relación**               |
-| Nombre de columna    | **Atributo**               |
-| Tipo de columna      | **Dominio**                |
-| Fila                 | **Tupla**                  |
-| Definición de tabla  | **Esquema de relación**    |
-| Datos de la tabla    | **Estado de la relación**  |
+| Informal (tabla)    | Formal (modelo relacional) |
+| ------------------- | -------------------------- |
+| Tabla               | **Relación**               |
+| Nombre de columna   | **Atributo**               |
+| Tipo de columna     | **Dominio**                |
+| Fila                | **Tupla**                  |
+| Definición de tabla | **Esquema de relación**    |
+| Datos de la tabla   | **Estado de la relación**  |
 
 > ⚠️ Que una relación *parezca* una tabla no significa que se almacene físicamente así. La implementación física es asunto del SGBD.
 
