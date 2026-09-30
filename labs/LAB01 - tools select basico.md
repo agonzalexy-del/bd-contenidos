@@ -694,7 +694,7 @@ Salida:
 | Sqrt(X)    | Raíz cuadrada de X                                         |
 
 ---
-
+f
 ### Renombrar columnas
 
 Código SQL:

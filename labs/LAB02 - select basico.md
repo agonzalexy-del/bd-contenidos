@@ -167,8 +167,17 @@ Para emitir una canción en la radio hay que añadirle una cuña publicitaria. E
 
 Solución:
 ```sql
-
-
+select distinct
+	titulo,
+	pais,
+	duracion,
+	case
+		when pais == 'Reino Unido' then Round((duracion+30)/60.0, 2)
+		when pais == 'España' then Round((duracion+45)/60.0, 2)
+	end as duracion_radio_min
+from cancion
+order by duracion desc
+limit 20;
 ```
 
 Resultado:
