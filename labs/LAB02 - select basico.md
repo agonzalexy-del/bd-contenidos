@@ -1,4 +1,3 @@
-# SELECT
 
 
 ---
@@ -256,12 +255,6 @@ Salida:
 Tomemos una consulta que devuelve valores nulos en la columna `idioma`. Código SQL:
 ```sql
 select distinct
-    genero,
-    idioma,
-    pais
-from cancion
-where pais = 'Estados Unidos';
-```
 Salida:
 
 | genero | idioma | pais           |
@@ -596,6 +589,10 @@ Escribe una consulta que cuente las canciones que **no** están en inglés, cont
 Solución:
 
 ```sql
+select
+	count(*) as no_ingles
+from cancion
+where idioma not in ('EN') or idioma is null;
 ```
 
 Resultado:
