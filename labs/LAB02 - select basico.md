@@ -380,8 +380,9 @@ Escribe una consulta para encontrar las canciones (`cancion`) cuya duración (`d
 
 Solución:
 ```sql
-
-
+select *
+from cancion
+where duracion is not null and idioma is null;
 ```
 
 Resultado:
@@ -480,7 +481,11 @@ Escribe una consulta que devuelva todas las columnas de las canciones y añada u
 
 Solución:
 ```sql
-
+select *,
+	coalesce(duracion, reproducciones, me_gusta, valoracion, -1) as primer_dato
+from cancion
+order by id_cancion desc
+limit 10;
 
 ```
 
@@ -563,8 +568,10 @@ Salida:
 
 Solución:
 ```sql
-
-
+select 
+	avg(reproducciones) 
+from cancion
+where reproducciones > 1000000;
 ```
 
 Resultado:
@@ -603,8 +610,9 @@ Salida:
 
 Solución:
 ```sql
-
-
+select 
+	count(distinct anio) as anios_distintos
+from cancion;
 ```
 
 Resultado:
@@ -673,7 +681,11 @@ Escribe una consulta que muestre cada año de publicación (`anio`) distinto en 
 
 Solución:
 ```sql
-
+select 
+	anio,
+	count(*) as canciones_mismo_anio
+from cancion
+group by anio;
 
 ```
 
@@ -790,7 +802,11 @@ Escribe una consulta que cuente el número de canciones de cada una de las sigui
 
 Solución:
 ```sql
-
+select 
+	count(*) filter(where duracion < 200) as corta,
+	count(*) filter(where duracion between 200 and 300) as media,
+	count(*) filter(where duracion > 300) as larga
+from cancion;
 
 ```
 
