@@ -23,7 +23,12 @@ Escribe una consulta que devuelva el sueldo medio por departamento para departam
 
 Solución:
 ```sql
-
+select
+	dpto
+	avg(sueldo) as sueldo_medio
+from empleado
+group by dpto
+having(*) > 1;
 ```
 
 Resultado:
@@ -242,7 +247,12 @@ Escribe una consulta para obtener el nombre, apellido1 y fechaNac de los emplead
 
 Solución:
 ```sql
-
+select 
+	nombre,
+	apellido1,
+	fechaNac
+from empleado
+where fechaNac between date('2025-01-01', '-70 years') and date('2025-01-01', '-59 years');
 ```
 
 Tabla resultado:
@@ -519,7 +529,12 @@ Escribe una consulta que devuelva los empleados con más de un familiar que no s
 
 Solución:
 ```sql
-
+select empleado as empleado
+from familiar
+group by empleado
+having count(*) > 1
+except
+select supervisor as empleado from empleado where supervisor is not null
 ```
 
 Tabla resultado:
@@ -649,7 +664,13 @@ Escribe una consulta que devuelva el dni de los empleados que no tienen familiar
 
 Solución:
 ```sql
-
+select dni from empleado
+except 
+select empleado from familiar
+union
+select supervisor from empleado
+group by supervisor
+having count(*) > 2;
 
 ```
 

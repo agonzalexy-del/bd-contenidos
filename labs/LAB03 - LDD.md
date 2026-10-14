@@ -27,7 +27,10 @@ Escribe una consulta que utilice un filtro para calcular simultáneamente el nú
 
 Solución:
 ```sql
-
+select 
+	Round(avg(reproducciones) filter(where reproducciones > 100000000), 2) as media_exitos,
+	Round(avg(reproducciones) filter(where reproducciones < 1000000), 2) as media_minoritarias
+from cancion;
 ```
 
 Resultado:
